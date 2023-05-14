@@ -40,6 +40,7 @@ body {
     width: 16.666%;
     font-size: 1.5em;
     padding: 0em;
+    display: none;
 }
 .pageTitles:hover {
     background-color: var(--color-four-hover);

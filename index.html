@@ -11,7 +11,7 @@
             <h2 id="secondaryHeader"></h2>
         </div>
         <div class="subHeader row">
-            <div id="experience" class="pageTitles">
+            <div id="experience" class="pageTitles" onclick="loadPage('experience')">
                 Experience
             </div>
             <div id="education" class="pageTitles">
@@ -39,6 +39,7 @@
 </body>
 </html>
 <script>
+    let stringArr = ["experience", "education", "skills", "portfolio", "references", "personal"];
     function textReveal(id) {
         let ele = document.getElementById(id);
         let string = "Thomas Meyer";
@@ -52,13 +53,22 @@
                 ele.innerText = text.substring(0, i);
                 textLoop(text, i, ele, id);
             }, 75);
-        } else {
-            console.log(id);
-            if (id == "primaryHeader") {
+        } else if (id == "primaryHeader") {
                 ele = document.getElementById("secondaryHeader");
                 text = "Software Developer";
                 textLoop(text, 0, ele, "secondaryHeader");
-            };
+        } else if (id == "secondaryHeader") {
+            showBlock(0);
+        }
+    }
+    function showBlock(i) {
+        i++;
+        if (i <= stringArr.length) {
+            setTimeout(() => {
+                let ele = document.getElementById(stringArr[i-1]);
+                ele.style.display = "inline-block";
+                showBlock(i);
+            }, 500);
         }
     }
     textReveal("primaryHeader");
