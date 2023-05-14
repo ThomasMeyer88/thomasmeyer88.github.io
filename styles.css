@@ -128,6 +128,12 @@ body {
     font-size: 1.5em;
     opacity: 0;
 }
+.header > p:last-child {
+    font-size: 1em;
+    width: 50%;
+    margin-left: 45%;
+    margin-right: 5%;
+}
 .header > h1 {
     font-size: 3.5em;
 }

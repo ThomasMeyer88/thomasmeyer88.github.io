@@ -34,6 +34,10 @@
             <h1 id="primaryHeader"></h1>
             <br>
             <h2 id="secondaryHeader"></h2>
+            <br>
+            <p id="introductionTwo">
+                I love the act of creation and enjoy working with others to bring their vision to life.  
+            </p>
         </div>
 
         <div class="mainBody">
@@ -105,17 +109,23 @@
     }
     document.addEventListener('mousemove', onMouseMove);
     //end flashlight cursor
-    function scaleOpacity(i) {
+
+    function scaleOpacity(i, id) {
         i = i +  0.05;
-        console.log(i, i < 1);
-        if (i < 1) {
+        console.log(id);
+        if (i < 1 && String("introduction").valueOf() === String(id).valueOf()) {
             setTimeout(() => {
-                document.getElementById('introduction').style.opacity = i;
-                scaleOpacity(i);
+                document.getElementById(id).style.opacity = i;
+                scaleOpacity(i, id);
             }, fastLoad);
-        } else {
+        } else if (String("introduction").valueOf() === String(id).valueOf()) {
             textReveal("primaryHeader");
-        } 
+        } else if (i < 1 && String("introductionTwo").valueOf() === String(id).valueOf()) {
+            setTimeout(() => {
+                document.getElementById(id).style.opacity = i;
+                scaleOpacity(i, id);
+            }, fastLoad);
+        }
     }
 
     function textReveal(id) {
@@ -136,7 +146,8 @@
                 text = "Web Developer";
                 textLoop(text, 0, ele, "secondaryHeader");
         } else if (id == "secondaryHeader") {
-            // showBlock(0);
+            console.log(`test`);
+            scaleOpacity(0, "introductionTwo");
         }
     }
     function showBlock(i) {
@@ -184,6 +195,6 @@
         return allText;
     }
 
-    scaleOpacity(0);
+    scaleOpacity(0, "introduction");
     
 </script>
