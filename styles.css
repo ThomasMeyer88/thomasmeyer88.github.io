@@ -19,15 +19,15 @@ body {
 .flashLight {
     position:absolute;
     transform:translate(-50%,-50%);
-    height:60em;
-    width:60em;
+    height:75em;
+    width:75em;
     border-radius:50%;
     background-image: radial-gradient(white, var(--color-five), var(--color-five-hover), white, var(--color-three-alt), var(--color-five), 
     var(--color-five-hover), var(--color-three-alt), var(--color-five), var(--color-five-hover));
     /* transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-duration: .5s; */
-    opacity: 0.01;    
+    opacity: 0.02;    
 }
 
 .container {
@@ -38,8 +38,8 @@ body {
 .header {
     background-color: var(--color-five);
     color: var(--color-three);
-    margin-top: 10em;
-    width: 50%;
+    margin-top: 4em;
+    width: 40%;
     text-align: right;
     padding: 0.5em;
     padding-top: 1em;
@@ -48,35 +48,36 @@ body {
 .subHeader {
     background-color: var(--color-five);
     color: var(--color-three);
-    height: 2em;
     width: 100%;
-    text-align: center;
-    padding: 0.25em;
-    padding-top: 0em;
-    padding-left: 0em;
-    line-height: 2.25em;
-    border-top: 1px solid var(--color-three);
+    margin-top: 1em;
 }
 .pageTitles {
-    width: 16.666%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: var(--color-six);
+    text-align: right;
     font-size: 1.5em;
     padding: 0em;
     display: none;
+    margin-top: 1em;
 }
 .pageTitles:hover {
-    background-color: var(--color-four-hover);
-    color: var(--color-five);
-    font-size: 2em;
-    transition-delay: 0.1s; 
-    -webkit-transition-delay: 0.1s; 
+    font-size: 2.5em;
+    margin-top: 0.5em;
+    transition-delay: 0.2s; 
+    -webkit-transition-delay: 0.2s; 
 }
 .pageTitles-Alt {
-    width: 16.666%;
-    font-size: 1.5em;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: var(--color-six);
+    text-align: right;
+    font-size: 2.5em;
     padding: 0em;
-    background-color: var(--color-four-hover);
-    color: var(--color-five);
-    font-size: 2em;
+    display: none;
+    margin-top: 0.5em;
 }
 .page {
     display: none;
@@ -123,16 +124,18 @@ body {
     margin-bottom: 0em;
 }
 
-.header > p {
+.intro {
     color: var(--color-six);
     font-size: 1.5em;
     opacity: 0;
 }
-.header > p:last-child {
+.sub-intro {
+    color: var(--color-six);
     font-size: 1em;
     width: 50%;
     margin-left: 45%;
     margin-right: 5%;
+    opacity: 0;
 }
 .header > h1 {
     font-size: 3.5em;

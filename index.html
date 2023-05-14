@@ -5,39 +5,36 @@
 </head>
 <body>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <div id="light" class="flashLight"></div>
+    <!-- <div id="light" class="flashLight"></div> -->
 
     <div class="container">
-        <!-- <div class="subHeader row">
-            <div id="experience" class="pageTitles" onclick="loadPage('experience')">
-                Experience
-            </div>
-            <div id="education" class="pageTitles" onclick="loadPage('education')">
-                Education
-            </div>
-            <div id="skills" class="pageTitles" onclick="loadPage('skills')">
-                Skills
-            </div>
-            <div id="portfolio" class="pageTitles" onclick="loadPage('portfolio')">
-                Portfolio
-            </div>
-            <div id="references" class="pageTitles" onclick="loadPage('references')">
-                References
-            </div>
-            <div id="personal" class="pageTitles" onclick="loadPage('personal')">
-                Personal
-            </div>
-        </div> -->
         <div class="header row">
-            <p id="introduction">Welcome, I am</p>
+            <p id="introduction" class="intro">Welcome, I am</p>
             <br>
             <h1 id="primaryHeader"></h1>
             <br>
             <h2 id="secondaryHeader"></h2>
             <br>
-            <p id="introductionTwo">
+            <p id="introductionTwo" class="sub-intro">
                 I love the act of creation and enjoy working with others to bring their vision to life.  
             </p>
+            <div class="subHeader row">
+                <div id="experience" class="pageTitles" onclick="loadPage('experience')">
+                    experience
+                </div>
+                <div id="education" class="pageTitles" onclick="loadPage('education')">
+                    education
+                </div>
+                <div id="skills" class="pageTitles" onclick="loadPage('skills')">
+                    skills
+                </div>
+                <div id="portfolio" class="pageTitles" onclick="loadPage('portfolio')">
+                    portfolio
+                </div>
+                <div id="references" class="pageTitles" onclick="loadPage('references')">
+                    references
+                </div>
+            </div>
         </div>
 
         <div class="mainBody">
@@ -96,18 +93,18 @@
 </body>
 </html>
 <script>
-    let stringArr = ["experience", "education", "skills", "portfolio", "references", "personal", "homePage"];
+    let stringArr = ["experience", "education", "skills", "portfolio", "references", "homePage"];
     let activePage = "home";
     let immediateLoad = 0;
     let fastLoad = 75;
     let slowLoad = 500;
     //flashlight cursor
-    let light = document.getElementById('light');
-    const onMouseMove = (e) =>{
-        light.style.left = e.pageX + 'px';
-        light.style.top = e.pageY + 'px';
-    }
-    document.addEventListener('mousemove', onMouseMove);
+    // let light = document.getElementById('light');
+    // const onMouseMove = (e) =>{
+    //     light.style.left = e.pageX + 'px';
+    //     light.style.top = e.pageY + 'px';
+    // }
+    // document.addEventListener('mousemove', onMouseMove);
     //end flashlight cursor
 
     function scaleOpacity(i, id) {
@@ -124,6 +121,8 @@
                 document.getElementById(id).style.opacity = i;
                 scaleOpacity(i, id);
             }, fastLoad);
+        } else {
+            showBlock(0);
         }
     }
 
@@ -156,7 +155,7 @@
                 ele.style.display = "inline-block";
                 activePage = "homePage";
                 showBlock(i);
-            }, immediateLoad);
+            }, slowLoad);
         }
     }
     function loadPage(page) {
