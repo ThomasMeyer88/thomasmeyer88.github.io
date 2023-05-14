@@ -11,27 +11,47 @@
             <h2 id="secondaryHeader"></h2>
         </div>
         <div class="subHeader row">
-            <div id="experience" class="pageTitles" onclick="loadPage('experience')">
+            <div id="experience" class="pageTitles" onclick="loadPage('experiencePage')">
                 Experience
             </div>
-            <div id="education" class="pageTitles">
+            <div id="education" class="pageTitles" onclick="loadPage('educationPage')">
                 Education
             </div>
-            <div id="skills" class="pageTitles">
+            <div id="skills" class="pageTitles" onclick="loadPage('skillsPage')">
                 Skills
             </div>
-            <div id="portfolio" class="pageTitles">
+            <div id="portfolio" class="pageTitles" onclick="loadPage('portfolioPage')">
                 Portfolio
             </div>
-            <div id="references" class="pageTitles">
+            <div id="references" class="pageTitles" onclick="loadPage('referencesPage')">
                 References
             </div>
-            <div id="personal" class="pageTitles">
+            <div id="personal" class="pageTitles" onclick="loadPage('personalPage')">
                 Personal
             </div>
         </div>
         <div class="mainBody">
-
+            <div id="homePage" class="page">
+                Home
+            </div> 
+            <div id="experiencePage" class="page">
+                Experience
+            </div> 
+            <div id="educationPage" class="page">
+                Education
+            </div> 
+            <div id="skillsPage" class="page">
+                Skills
+            </div> 
+            <div id="portfolioPage" class="page">
+                Portfolio
+            </div>
+            <div id="referencesPage" class="page">
+                References
+            </div>
+            <div id="personalPage" class="page">
+                Personal
+            </div>
         </div>
 
 
@@ -39,7 +59,8 @@
 </body>
 </html>
 <script>
-    let stringArr = ["experience", "education", "skills", "portfolio", "references", "personal"];
+    let stringArr = ["experience", "education", "skills", "portfolio", "references", "personal", "homePage"];
+    let activePage = "none";
     function textReveal(id) {
         let ele = document.getElementById(id);
         let string = "Thomas Meyer";
@@ -67,9 +88,15 @@
             setTimeout(() => {
                 let ele = document.getElementById(stringArr[i-1]);
                 ele.style.display = "inline-block";
+                activePage = "homePage";
                 showBlock(i);
             }, 500);
         }
+    }
+    function loadPage(page) {
+        document.getElementById(activePage).style.display = "none";
+        document.getElementById(page).style.display = "inline-block";
+        activePage = page;
     }
     textReveal("primaryHeader");
     
