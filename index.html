@@ -37,39 +37,49 @@
             </div>
         </div>
 
-        <div class="mainBody">
+        <div class="mainBody row">
             <div id="homePage" class="page">
                 Home
             </div> 
             <div id="experiencePage" class="page">
                 <br>
-                <h3>Contractor - Software Developer</h3>
-                <p><i>Spring 2023</i>
-                    <br>
-                    Built static HTML page to small business owner’s specifications.  Setup custom email domain for business.  Per owner’s request, built an executable JAR file using JavaFX to create and write to Excel spreadsheets.
-                </p>
-                <h3>Contractor - Angular Developer</h2>
-                <p><i>Spring 2022</i>
-                    <br>
-                    Responsible for front end development of intake and assessment web app for physical therapists.  
-                </p>
-                <h3>Ntelicor - American Airlines, DFW, Texas - Front End Developer</h3>
-                <p><i>October 2019 - March 2020</i>
-                    <br>
-                    Worked on development of Angular application deployed to airline terminals.  Implemented Cucumber for BDD.  Expanded Karma test coverage and refactored redundant code to improve test efficiency.  Later, worked with a team that maintained proprietary internal libraries for Angular components and SASS.  Responsible for bug fixes and maintained ADA compliant HTML.
-                </p>
+                <div class="expBlock">
+                    <h3>Contractor - Software Developer</h3>
+                    <p><i>Spring 2023</i>
+                        <br>
+                        Built static HTML page to small business owner’s specifications.  Setup custom email domain for business.  Per owner’s request, built an executable JAR file using JavaFX to create and write to Excel spreadsheets.
+                    </p>
+                </div>
+                <div class="expBlock">
+                <h3>Contractor - Angular Developer</h3>
+                    <p><i>Spring 2022</i>
+                        <br>
+                        Responsible for front end development of intake and assessment web app for physical therapists.  
+                    </p>
+                </div>
+                <div class="expBlock">
+                    <h3>Ntelicor - American Airlines, DFW, Texas - Front End Developer</h3>
+                    <p><i>October 2019 - March 2020</i>
+                        <br>
+                        Worked on development of Angular application deployed to airline terminals.  Implemented Cucumber for BDD.  Expanded Karma test coverage and refactored redundant code to improve test efficiency.  Later, worked with a team that maintained proprietary internal libraries for Angular components and SASS.  Responsible for bug fixes and maintained ADA compliant HTML.
+                    </p>
+                </div>
+                <div class="expBlock">
                 <h3>Appddiction Studios, San Antonio, Texas - Full-Stack Developer</h3>
-                <p>
-                    <i>October 2018 - September 2019</i>
-                    <br>
-                    Worked on development of mobile version of EODIMs that utilized Angular and Ionic.  Implemented data storage on mobile devices, mobile specific endpoints on SpringBoot API for CRUD operations, and assisted other team members as needed.  Developed mobile APP for the UTSA Autism Research Center.  Designed and built out the primary function of the app - the testing form.  Later, maintained legacy code based for FESIMs and worked through a backlog of bug fixes.                     
-                </p>
+                    <p>
+                        <i>October 2018 - September 2019</i>
+                        <br>
+                        Worked on development of mobile version of EODIMs that utilized Angular and Ionic.  Implemented data storage on mobile devices, mobile specific endpoints on SpringBoot API for CRUD operations, and assisted other team members as needed.  Developed mobile APP for the UTSA Autism Research Center.  Designed and built out the primary function of the app - the testing form.  Later, maintained legacy code based for FESIMs and worked through a backlog of bug fixes.                     
+                    </p>
+                </div>
+                <div class="expBlock">
                 <h3>Inflow NS (Contractor), San Antonio, Texas - Software Developer</h3>
-                <p>
-                    <i>July 2018 - September 2018</i>
-                    <br>
-                    Worked on development of web app that built on C#, HTML Razor, and MySQL.  Wrote stored procedures in MySQL workbench, built out pages based on guidance from UI designer, implemented JavaScript functionality, and created CRUD operations.
-                </p>
+                    <p>
+                        <i>July 2018 - September 2018</i>
+                        <br>
+                        Worked on development of web app that built on C#, HTML Razor, and MySQL.  Wrote stored procedures in MySQL workbench, built out pages based on guidance from UI designer, implemented JavaScript functionality, and created CRUD operations.
+                    </p>
+                </div>
             </div> 
             <div id="educationPage" class="page">
                 Education
@@ -97,7 +107,7 @@
     let activePage = "home";
     let immediateLoad = 0;
     let fastLoad = 75;
-    let slowLoad = 500;
+    let slowLoad = 250;
     //flashlight cursor
     // let light = document.getElementById('light');
     // const onMouseMove = (e) =>{
@@ -161,11 +171,14 @@
     function loadPage(page) {
         document.getElementById(page).classList = ["pageTitles-Alt"];
         page = page + "Page";
-
+        console.log(activePage);
         if (String("homePage").valueOf() !== String(activePage).valueOf()) {
+            console.log("test");
             document.getElementById(activePage).style.display = "none";
             activePage = activePage.substring(0, activePage.length - 4);
             document.getElementById(activePage).classList = ["pageTitles"];
+        } else {
+            document.getElementById("homePage").style.display = "none";
         }
 
         document.getElementById(page).style.display = "inline-block";

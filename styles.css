@@ -13,8 +13,9 @@
 body {
    background-color: var(--color-five);
    margin: 0;
-   font-family: 'Arial';
+   font-family: ui-sans-serif,system-ui,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
    padding: 0;
+   font-weight: 100;
 }
 .flashLight {
     position:absolute;
@@ -44,7 +45,9 @@ body {
     padding: 0.5em;
     padding-top: 1em;
     padding-left: 0em;
+    position: fixed;
 }
+
 .subHeader {
     background-color: var(--color-five);
     color: var(--color-three);
@@ -81,21 +84,52 @@ body {
 }
 .page {
     display: none;
-}
-.page > h3 {
-    font-size: 1.1em;
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 0.75em;
-    margin-bottom: 0.25em;
+    color: var(--color-three);
 }
 
-.page > p {
-    font-size: 0.9em;
-    width: 75%;
-    margin-left: 12.5%;
+.expBlock {
+    width: 80%;
+    padding: 0.25em;
+    border-top: 1px solid  var(--color-five);
+    border-left: 1px solid  var(--color-five);
+}
+
+.expBlock:hover {
+    border-radius: 0.5em;
+    background-color: var(--color-five-hover);
+    transition-delay: 0.3s;
+    box-shadow: 1px 2px #081d32;
+    border-top: 1px solid #4e7297;
+    border-left: 1px solid #4e7297;
+}
+
+.expBlock > h3 {
+    width: 85%;
+    color: var(--color-three-alt);
+    font-size: 1.2em;
+    margin-bottom: 0.25em;
+    margin-top: 0.5em;
+    margin-left: 5%;
+    font-weight: 100;
+}
+
+.expBlock:hover > h3 {
+    color: var(--color-six);
+}
+
+.expBlock > p {
+    width: 80%;
+    font-size: 0.8em;
     margin-top: 0.2em;
-    margin-bottom: 0.2em;
+    margin-bottom: 1em;
+    margin-left: 10%;
+    line-height: 1.5em;
+}
+
+.mainBody {
+    margin-top: 4em;
+    width: 55%;
+    margin-left: 45%;
 }
 
 @media only screen and (max-width: 749px) {
