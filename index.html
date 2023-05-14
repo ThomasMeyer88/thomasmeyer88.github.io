@@ -112,7 +112,6 @@
 
     function scaleOpacity(i, id) {
         i = i +  0.05;
-        console.log(id);
         if (i < 1 && String("introduction").valueOf() === String(id).valueOf()) {
             setTimeout(() => {
                 document.getElementById(id).style.opacity = i;
@@ -146,7 +145,6 @@
                 text = "Web Developer";
                 textLoop(text, 0, ele, "secondaryHeader");
         } else if (id == "secondaryHeader") {
-            console.log(`test`);
             scaleOpacity(0, "introductionTwo");
         }
     }
@@ -168,33 +166,12 @@
         if (String("homePage").valueOf() !== String(activePage).valueOf()) {
             document.getElementById(activePage).style.display = "none";
             activePage = activePage.substring(0, activePage.length - 4);
-            console.log(activePage);
             document.getElementById(activePage).classList = ["pageTitles"];
         }
 
         document.getElementById(page).style.display = "inline-block";
         activePage = page;
     }
-    function getText(url) {
-        "use strict";
-        var rawFile = new XMLHttpRequest();
-        var allText = "";
-        rawFile.open("Get", url, false);
-        rawFile.onreadystatechange = function()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
-                    allText = rawFile.responseText;
-                }
-            }
-        }
-        rawFile.send(null);
-        console.log(allText);
-        return allText;
-    }
-
     scaleOpacity(0, "introduction");
     
 </script>
