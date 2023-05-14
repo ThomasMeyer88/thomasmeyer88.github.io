@@ -2,9 +2,11 @@
     --color-one: #12395b;
     --color-two: #ffffff;
     --color-three: #e6f1fa;
+    --color-three-hover: #f1f7fc;
     --color-three-alt: #c8dbeb;
     --color-four: #006ec8; 
-    --color-five: #0b2237;  
+    --color-five: #0b2237; 
+    --color-five-hover: #14304b;
     --color-four-hover: #8ec8f7; 
     --color-six: #bdf0df;
 }
@@ -17,12 +19,17 @@ body {
 .flashLight {
     position:absolute;
     transform:translate(-50%,-50%);
-    height:40em;
-    width:40em;
+    height:60em;
+    width:60em;
     border-radius:50%;
-    background-image: radial-gradient(white, var(--color-five), var(--color-three), var(--color-five), var(--color-three-alt), var(--color-one));
+    background-image: radial-gradient(white, var(--color-five), var(--color-five-hover), white, var(--color-three-alt), var(--color-five), 
+    var(--color-five-hover), var(--color-three-alt), var(--color-five), var(--color-five-hover));
+    /* transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .5s; */
     opacity: 0.01;    
 }
+
 .container {
     margin-top: 0;
     color: var(--color-five);
@@ -115,6 +122,7 @@ body {
     margin-top: 0.25em;
     margin-bottom: 0em;
 }
+
 .header > p {
     color: var(--color-six);
     font-size: 1.5em;
