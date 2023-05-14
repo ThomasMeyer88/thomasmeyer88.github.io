@@ -11,22 +11,22 @@
             <h2 id="secondaryHeader"></h2>
         </div>
         <div class="subHeader row">
-            <div id="experience" class="pageTitles" onclick="loadPage('experiencePage')">
+            <div id="experience" class="pageTitles" onclick="loadPage('experience')">
                 Experience
             </div>
-            <div id="education" class="pageTitles" onclick="loadPage('educationPage')">
+            <div id="education" class="pageTitles" onclick="loadPage('education')">
                 Education
             </div>
-            <div id="skills" class="pageTitles" onclick="loadPage('skillsPage')">
+            <div id="skills" class="pageTitles" onclick="loadPage('skills')">
                 Skills
             </div>
-            <div id="portfolio" class="pageTitles" onclick="loadPage('portfolioPage')">
+            <div id="portfolio" class="pageTitles" onclick="loadPage('portfolio')">
                 Portfolio
             </div>
-            <div id="references" class="pageTitles" onclick="loadPage('referencesPage')">
+            <div id="references" class="pageTitles" onclick="loadPage('references')">
                 References
             </div>
-            <div id="personal" class="pageTitles" onclick="loadPage('personalPage')">
+            <div id="personal" class="pageTitles" onclick="loadPage('personal')">
                 Personal
             </div>
         </div>
@@ -87,7 +87,7 @@
 </html>
 <script>
     let stringArr = ["experience", "education", "skills", "portfolio", "references", "personal", "homePage"];
-    let activePage = "none";
+    let activePage = "home";
     let immediateLoad = 0;
     let fastLoad = 75;
     let slowLoad = 500;
@@ -124,7 +124,16 @@
         }
     }
     function loadPage(page) {
-        document.getElementById(activePage).style.display = "none";
+        document.getElementById(page).classList = ["pageTitles-Alt"];
+        page = page + "Page";
+        
+        if (String("homePage").valueOf() !== String(activePage).valueOf()) {
+            document.getElementById(activePage).style.display = "none";
+            activePage = activePage.substring(0, activePage.length - 4);
+            console.log(activePage);
+            document.getElementById(activePage).classList = ["pageTitles"];
+        }
+
         document.getElementById(page).style.display = "inline-block";
         activePage = page;
     }

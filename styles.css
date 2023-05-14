@@ -52,6 +52,14 @@ body {
     transition-delay: 0.1s; 
     -webkit-transition-delay: 0.1s; 
 }
+.pageTitles-Alt {
+    width: 16.666%;
+    font-size: 1.5em;
+    padding: 0em;
+    background-color: var(--color-four-hover);
+    color: var(--color-five);
+    font-size: 2em;
+}
 .page {
     display: none;
 }
