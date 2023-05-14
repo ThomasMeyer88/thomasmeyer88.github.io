@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="container">
+        <div class="header">
+            <h1 id="primaryHeader"></h1>
+            <h2 id="secondaryHeader"></h2>
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+    function textReveal(id) {
+        let ele = document.getElementById(id);
+        let string = "Thomas Meyer";
+        textLoop(string, 0, ele, id);
+    }
+
+   function textLoop(text, i, ele, id) {
+        i++;
+        console.log(text.length);
+        if (i <= text.length) {
+            setTimeout(() => {
+                ele.innerText = text.substring(0, i);
+                textLoop(text, i, ele, id);
+            }, 75);
+        } else {
+            console.log(id);
+            if (id == "primaryHeader") {
+                ele = document.getElementById("secondaryHeader");
+                text = "Software Developer";
+                textLoop(text, 0, ele, "secondaryHeader");
+            };
+        }
+    }
+    textReveal("primaryHeader");
+    
+</script>
