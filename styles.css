@@ -2,15 +2,26 @@
     --color-one: #12395b;
     --color-two: #ffffff;
     --color-three: #e6f1fa;
+    --color-three-alt: #c8dbeb;
     --color-four: #006ec8; 
     --color-five: #0b2237;  
     --color-four-hover: #8ec8f7; 
+    --color-six: #bdf0df;
 }
 body {
-   background-color: var(--color-three);
+   background-color: var(--color-five);
    margin: 0;
    font-family: 'Arial';
    padding: 0;
+}
+.flashLight {
+    position:absolute;
+    transform:translate(-50%,-50%);
+    height:40em;
+    width:40em;
+    border-radius:50%;
+    background-image: radial-gradient(white, var(--color-five), var(--color-three), var(--color-five), var(--color-three-alt), var(--color-one));
+    opacity: 0.01;    
 }
 .container {
     margin-top: 0;
@@ -20,9 +31,9 @@ body {
 .header {
     background-color: var(--color-five);
     color: var(--color-three);
-    height: 5em;
-    width: 100%;
-    text-align: center;
+    margin-top: 10em;
+    width: 50%;
+    text-align: right;
     padding: 0.5em;
     padding-top: 1em;
     padding-left: 0em;
@@ -97,15 +108,24 @@ body {
 }
 
 
-.header > h1, h2 {
-    margin: 0;
-    height: 1.5em;
+.header > h1, h2, p {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0.25em;
+    margin-bottom: 0em;
+}
+.header > p {
+    color: var(--color-six);
+    font-size: 1.5em;
+    opacity: 0;
 }
 .header > h1 {
-    font-size: 2em;
+    font-size: 3.5em;
 }
 .header > h2 {
-    font-size: 1em;
+    font-size: 2em;
+    color: var(--color-three-alt);
 }
 
 .col-12 {

@@ -5,12 +5,10 @@
 </head>
 <body>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div id="light" class="flashLight"></div>
+
     <div class="container">
-        <div class="header">
-            <h1 id="primaryHeader"></h1>
-            <h2 id="secondaryHeader"></h2>
-        </div>
-        <div class="subHeader row">
+        <!-- <div class="subHeader row">
             <div id="experience" class="pageTitles" onclick="loadPage('experience')">
                 Experience
             </div>
@@ -29,7 +27,15 @@
             <div id="personal" class="pageTitles" onclick="loadPage('personal')">
                 Personal
             </div>
+        </div> -->
+        <div class="header row">
+            <p id="introduction">Welcome, I am</p>
+            <br>
+            <h1 id="primaryHeader"></h1>
+            <br>
+            <h2 id="secondaryHeader"></h2>
         </div>
+
         <div class="mainBody">
             <div id="homePage" class="page">
                 Home
@@ -91,6 +97,27 @@
     let immediateLoad = 0;
     let fastLoad = 75;
     let slowLoad = 500;
+    //flashlight cursor
+    let light = document.getElementById('light');
+    const onMouseMove = (e) =>{
+        light.style.left = e.pageX + 'px';
+        light.style.top = e.pageY + 'px';
+    }
+    document.addEventListener('mousemove', onMouseMove);
+    //end flashlight cursor
+    function scaleOpacity(i) {
+        i = i +  0.05;
+        console.log(i, i < 1);
+        if (i < 1) {
+            setTimeout(() => {
+                document.getElementById('introduction').style.opacity = i;
+                scaleOpacity(i);
+            }, fastLoad);
+        } else {
+            textReveal("primaryHeader");
+        } 
+    }
+
     function textReveal(id) {
         let ele = document.getElementById(id);
         let string = "Thomas Meyer";
@@ -103,13 +130,13 @@
             setTimeout(() => {
                 ele.innerText = text.substring(0, i);
                 textLoop(text, i, ele, id);
-            }, immediateLoad);
+            }, fastLoad);
         } else if (id == "primaryHeader") {
                 ele = document.getElementById("secondaryHeader");
-                text = "Software Developer";
+                text = "Web Developer";
                 textLoop(text, 0, ele, "secondaryHeader");
         } else if (id == "secondaryHeader") {
-            showBlock(0);
+            // showBlock(0);
         }
     }
     function showBlock(i) {
@@ -126,7 +153,7 @@
     function loadPage(page) {
         document.getElementById(page).classList = ["pageTitles-Alt"];
         page = page + "Page";
-        
+
         if (String("homePage").valueOf() !== String(activePage).valueOf()) {
             document.getElementById(activePage).style.display = "none";
             activePage = activePage.substring(0, activePage.length - 4);
@@ -156,6 +183,7 @@
         console.log(allText);
         return allText;
     }
-    textReveal("primaryHeader");
+
+    scaleOpacity(0);
     
 </script>
