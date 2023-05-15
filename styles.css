@@ -31,7 +31,12 @@ body {
     transition-duration: .5s; */
     opacity: 0.02;    
 }
-
+a {
+    color: var(--color-six);
+}
+a:visited {
+    color: var(--color-four);
+}
 .container {
     margin-top: 0;
     color: var(--color-five);
@@ -96,6 +101,10 @@ body {
     float: left;
 }
 
+#referencesPage > .expBlock {
+    width: 60% !important;
+}
+
 .expBlock:hover {
     border-radius: 0.5em;
     background-color: var(--color-five-hover);
@@ -128,6 +137,11 @@ body {
     line-height: 1.5em;
 }
 
+.aboutMe {
+    font-size: 1.1em !important;
+    line-height: 2em;
+}
+
 .mainBody {
     margin-top: 3em;
     width: 55%;
@@ -140,6 +154,16 @@ body {
     margin-left: 10%;
     margin-bottom: 1em;
     display: none;
+}
+.skillList-Alt {
+    margin-top: 2em;
+    float: left;
+    margin-left: 10%;
+    margin-bottom: 1em;
+    width: 50%;
+}
+.skillList-Alt > .skillBubble {
+    margin-top: 1em;
 }
 .expBlock:hover > .skillList {
     display: inline-block;

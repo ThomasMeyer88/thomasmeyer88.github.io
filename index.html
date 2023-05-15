@@ -39,7 +39,19 @@
 
         <div class="mainBody row">
             <div id="homePage" class="page">
-                Home
+                <div class="expBlock">
+                    <h3>About Me</h3>
+                    <p class="aboutMe">My interest in software development began in high school when I learned how to create basic video game modifications.
+                       <br>
+                       I was luckily able to take a pair of programming courses later on that led to me attempting simple scripts.
+                       <br>
+                       Years later I turned away from an interest in accounting and immersed myself into software development full time.
+                       <br>
+                       After completing CodeUp's 18 week long course I was able to land my first full-time job in software development.
+                       <br>
+                       Since then I've had the opportunity to develop a wide variety of applications that ranged from military to civilian use.
+                    </p>
+                </div>
             </div> 
             <div id="experiencePage" class="page">
                 <br>
@@ -109,19 +121,106 @@
                 </div>
             </div> 
             <div id="educationPage" class="page">
-                Education
+                <div class="expBlock">
+                    <h3>CodeUp</h3>
+                    <p>
+                        CodeUp is an 18 week long full stack web development boot camp that teaches students all aspects of web development.
+                        <br>
+                        The technology stack used consists of HTML, CSS, JavaScript, MySQL, JQuery, SpringBoot, Thymeleaf, and Git.
+                    </p>
+                    <br>
+                </div>
+                <div class="expBlock">
+                    <h3>Hardin-Simmons University</h3>
+                    <p>
+                        Major: Accounting
+                    </p>
+                </div>
             </div> 
             <div id="skillsPage" class="page">
-                Skills
+                <div class="skillList-Alt">
+                    <div class="skillBubble">Front End Development</div>
+                    <div class="skillBubble">Mobile Development</div>
+                    <div class="skillBubble">APIs</div>
+                    <div class="skillBubble">Agile</div>
+                    <div class="skillBubble">Angular</div>
+                    <div class="skillBubble">JavaScript</div>
+                    <div class="skillBubble">jQuery</div>
+                    <div class="skillBubble">HTML</div>
+                    <div class="skillBubble">CSS</div>
+                    <div class="skillBubble">SCSS</div>
+                    <div class="skillBubble">SASS</div>
+                    <div class="skillBubble">Ionic</div>
+                    <div class="skillBubble">MySQL</div>
+                    <div class="skillBubble">OracleSQL</div>
+                    <div class="skillBubble">Git</div>
+                    <div class="skillBubble">C#</div>
+                    <div class="skillBubble">Java</div>
+                    <div class="skillBubble">SpringBoot</div>
+                    <div class="skillBubble">JavaFX</div>                    
+                </div>
             </div> 
-            <div id="portfolioPage" class="page">
-                Portfolio
-            </div>
             <div id="referencesPage" class="page">
-                References
-            </div>
-            <div id="personalPage" class="page">
-                Personal
+                <div class="expBlock">
+                    <h3>Bob Buechel</h3>
+                    <p>
+                        <i>Technical Lead at American Airlines</i>
+                        <br>
+                        <i>Phone: 214-457-1644</i>
+                        <br>
+                        <i>E-Mail: buecheldesigns@gmail.com</i>
+                        <br>
+                        <a href="https://www.linkedin.com/in/bobbuechel/" target="_blank">
+                            LinkedIn: https://www.linkedin.com/in/bobbuechel/
+                        </a>
+                    </p>
+                </div>
+                <div class="expBlock">
+                    <h3>Pervis King</h3>
+                    <p>
+                        <i>SME at Appddiction Studios</i>
+                        <br>
+                        <i>retired USAF EOD Technician</i>
+                        <br>
+                        <i>Phone: 301-204-7712</i>
+                        <br>
+                        <a href="https://www.linkedin.com/in/pervis-king-20657742/" target="_blank">
+                            LinkedIn: https://www.linkedin.com/in/pervis-king-20657742/
+                        </a>
+                    </p>
+                </div>
+                <div class="expBlock">
+                    <h3>John Wallace</h3>
+                    <p>
+                        <i>QA Engineer at Cosential/Unanet</i>
+                        <br>
+                        <i>Phone: 210-810-2414</i>
+                        <br>
+                        <a href="https://www.linkedin.com/in/mr-john-wallace" target="_blank">
+                            LinkedIn: https://www.linkedin.com/in/mr-john-wallace
+                        </a>
+                    </p>
+                </div>
+                <div class="expBlock">
+                    <h3>James Meyer</h3>
+                    <p>
+                        <i>Software Engineer at Mobile Frontiers</i>
+                        <br>
+                        <i>Phone: 469-442-7932</i>
+                        <br>
+                        <a href="https://www.linkedin.com/in/james-j-meyer/" target="_blank">
+                            LinkedIn: https://www.linkedin.com/in/james-j-meyer/
+                        </a>
+                    </p>
+                </div>
+                <div class="expBlock">
+                    <h3>Charles Hunt</h3>
+                    <p>
+                        <i>Retired US Army</i>
+                        <br>
+                        <i>Phone: 210-510-8593</i>
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -130,7 +229,7 @@
 </body>
 </html>
 <script>
-    let stringArr = ["experience", "education", "skills", "portfolio", "references", "homePage"];
+    let stringArr = ["experience", "education", "skills", "references", "homePage"];
     let activePage = "home";
     let immediateLoad = 0;
     let fastLoad = 0;
