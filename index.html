@@ -34,6 +34,9 @@
                 <div id="references" class="pageTitles" onclick="loadPage('references')">
                     references
                 </div>
+                <div id="home" class="pageTitles" onclick="loadPage('home')">
+                    home
+                </div>
             </div>
         </div>
 
@@ -229,7 +232,7 @@
 </body>
 </html>
 <script>
-    let stringArr = ["experience", "education", "skills", "references", "homePage"];
+    let stringArr = ["experience", "education", "skills", "references", "home", "homePage"];
     let activePage = "home";
     let immediateLoad = 0;
     let fastLoad = 75;
@@ -297,15 +300,11 @@
     function loadPage(page) {
         document.getElementById(page).classList = ["pageTitles-Alt"];
         page = page + "Page";
-        console.log(activePage);
-        if (String("homePage").valueOf() !== String(activePage).valueOf()) {
-            console.log("test");
-            document.getElementById(activePage).style.display = "none";
-            activePage = activePage.substring(0, activePage.length - 4);
-            document.getElementById(activePage).classList = ["pageTitles"];
-        } else {
-            document.getElementById("homePage").style.display = "none";
-        }
+
+        document.getElementById(activePage).style.display = "none";
+        activePage = activePage.substring(0, activePage.length - 4);
+        document.getElementById(activePage).classList = ["pageTitles"];
+
 
         document.getElementById(page).style.display = "inline-block";
         activePage = page;
