@@ -237,6 +237,8 @@
     let immediateLoad = 0;
     let fastLoad = 75;
     let slowLoad = 250;
+    let mQ = window.matchMedia( "(max-width: 600px)" );
+
     //flashlight cursor
     // let light = document.getElementById('light');
     // const onMouseMove = (e) =>{
@@ -245,6 +247,8 @@
     // }
     // document.addEventListener('mousemove', onMouseMove);
     //end flashlight cursor
+
+
 
     function scaleOpacity(i, id) {
         i = i +  0.05;
@@ -307,7 +311,9 @@
 
 
         document.getElementById(page).style.display = "inline-block";
-        document.getElementById(page).scrollIntoView();
+        if (mQ.matches) {
+            document.getElementById(page).scrollIntoView();
+        }
         activePage = page;
     }
     scaleOpacity(0, "introduction");
