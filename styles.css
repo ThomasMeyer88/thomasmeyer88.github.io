@@ -281,4 +281,7 @@ a:visited {
     .skillList-Alt > .skillBubble {
         margin-top: 1em;
     }
+    #referencesPage > .expBlock {
+        width: 100% !important;
+    }
 }

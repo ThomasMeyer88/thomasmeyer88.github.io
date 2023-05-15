@@ -20,7 +20,7 @@
             </p>
             <div class="subHeader">
                 <div id="experience" class="pageTitles" onclick="loadPage('experience')">
-                    <a #href="homePage">experience</a>
+                    experience
                 </div>
                 <div id="education" class="pageTitles" onclick="loadPage('education')">
                     education
@@ -307,6 +307,7 @@
 
 
         document.getElementById(page).style.display = "inline-block";
+        document.getElementById(page).scrollIntoView();
         activePage = page;
     }
     scaleOpacity(0, "introduction");
