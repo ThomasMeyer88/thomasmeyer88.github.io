@@ -8,7 +8,7 @@
     <!-- <div id="light" class="flashLight"></div> -->
 
     <div class="container">
-        <div class="header row">
+        <div class="header">
             <p id="introduction" class="intro">Welcome, I am</p>
             <br>
             <h1 id="primaryHeader"></h1>
@@ -18,9 +18,9 @@
             <p id="introductionTwo" class="sub-intro">
                 I love the act of creation and enjoy working with others to bring their vision to life.  
             </p>
-            <div class="subHeader row">
+            <div class="subHeader">
                 <div id="experience" class="pageTitles" onclick="loadPage('experience')">
-                    experience
+                    <a #href="homePage">experience</a>
                 </div>
                 <div id="education" class="pageTitles" onclick="loadPage('education')">
                     education
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="mainBody row">
+        <div class="mainBody">
             <div id="homePage" class="page">
                 <div class="expBlock">
                     <h3>About Me</h3>
